@@ -7,10 +7,14 @@ namespace AutomatedCar.Models
     {
         private VirtualFunctionBus virtualFunctionBus;
 
+        public DummySensor dummysensor { get; set; }
+
         public AutomatedCar(int x, int y, string filename)
             : base(x, y, filename)
         {
             this.virtualFunctionBus = new VirtualFunctionBus();
+            this.dummysensor = new DummySensor(this.VirtualFunctionBus);
+            this.VirtualFunctionBus.RegisterComponent(this.dummysensor);
             this.ZIndex = 10;
         }
 
