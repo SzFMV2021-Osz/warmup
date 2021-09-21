@@ -22,7 +22,6 @@ namespace AutomatedCar.SystemComponents.Sensors
             int dY = Math.Abs(circle.Y - car.Y);
             dummyPacket.DistanceX = dX;
             dummyPacket.DistanceY = dY;
-            virtualFunctionBus.DummyPacket = dummyPacket;
         }
     }
 }
