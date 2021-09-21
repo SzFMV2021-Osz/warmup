@@ -31,6 +31,7 @@
             get => this.controlledCars[this.controlledCarPointer];
 
         }
+
         public int ControlledCarPointer
         {
             get => this.controlledCarPointer;
@@ -40,11 +41,13 @@
                 this.RaisePropertyChanged("ControlledCar");
             }
         }
+
         public void AddControlledCar(AutomatedCar controlledCar)
         {
             this.controlledCars.Add(controlledCar);
             this.AddObject(controlledCar);
         }
+
         public void NextControlledCar()
         {
             if (this.controlledCarPointer < this.controlledCars.Count - 1)
@@ -57,6 +60,7 @@
             }
             this.RaisePropertyChanged("ControlledCar");
         }
+
         public void PrevControlledCar()
         {
             if (this.controlledCarPointer > 0)
