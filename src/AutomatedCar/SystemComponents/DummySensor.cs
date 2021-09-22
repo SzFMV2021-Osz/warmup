@@ -2,6 +2,7 @@ namespace AutomatedCar.SystemComponents
 {
     using Packets;
     using Models;
+    using System.Linq;
     using System;
     public class DummySensor : SystemComponent
     {
