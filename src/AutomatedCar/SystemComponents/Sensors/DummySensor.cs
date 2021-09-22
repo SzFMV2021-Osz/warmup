@@ -21,14 +21,15 @@ namespace AutomatedCar.SystemComponents
         public override void Process()
         {
             var circle = World.Instance.WorldObjects.ElementAt(0);
+            var controlledCar = World.Instance.ControlledCar;
 
-            int dX = Math.Abs(circle.X - World.Instance.ControlledCar.X);
-            int dY = Math.Abs(circle.Y - World.Instance.ControlledCar.Y);
+            int dX = Math.Abs(circle.X - controlledCar.X);
+            int dY = Math.Abs(circle.Y - controlledCar.Y);
 
-            this.packet.DistanceX = (int)dX;
-            this.packet.DistanceY = (int)dY;
+            this.packet.DistanceX = dX;
+            this.packet.DistanceY = dY;
 
-            this.virtualFunctionBus.DummyPacket = this.packet;
+            // this.virtualFunctionBus.DummyPacket = this.packet;
         }
     }
 }
