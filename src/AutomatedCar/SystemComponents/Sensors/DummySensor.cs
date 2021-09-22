@@ -26,8 +26,6 @@
 
             dummyPacket.DistanceX = Math.Abs(circleObject.X - carObject.X);
             dummyPacket.DistanceY = Math.Abs(circleObject.Y - carObject.Y);
-
-            virtualFunctionBus.DummyPacket = dummyPacket;
         }
     }
 }
