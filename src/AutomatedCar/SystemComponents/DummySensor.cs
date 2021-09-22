@@ -15,11 +15,8 @@ namespace AutomatedCar.SystemComponents
 
         public override void Process()
         {
-            AutomatedCar automatedCar = World.Instance.ControlledCar;
-            Circle circle = World.Instance.WorldObjects.OfType<Circle>().First();
-
-            this.dummyPacket.DistanceX = Math.Abs(automatedCar.X - circle.X);
-            this.dummyPacket.DistanceY = Math.Abs(automatedCar.Y - circle.Y);
+            this.dummyPacket.DistanceX = World.Instance.WorldObjects[0].X - World.Instance.ControlledCar.X;
+            this.dummyPacket.DistanceY = World.Instance.WorldObjects[0].Y - World.Instance.ControlledCar.Y;
         }
     }
 } 
