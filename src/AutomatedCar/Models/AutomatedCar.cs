@@ -6,10 +6,12 @@ namespace AutomatedCar.Models
     public class AutomatedCar : Car
     {
         private VirtualFunctionBus virtualFunctionBus;
+        private DummySensor dummySensor;
 
         public AutomatedCar(int x, int y, string filename)
             : base(x, y, filename)
         {
+            this.dummySensor = new DummySensor(this.virtualFunctionBus);
             this.virtualFunctionBus = new VirtualFunctionBus();
             this.ZIndex = 10;
         }
