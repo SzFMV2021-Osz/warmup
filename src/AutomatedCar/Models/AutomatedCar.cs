@@ -11,8 +11,8 @@ namespace AutomatedCar.Models
         public AutomatedCar(int x, int y, string filename)
             : base(x, y, filename)
         {
-            this.dummySensor = new DummySensor(this.virtualFunctionBus);
             this.virtualFunctionBus = new VirtualFunctionBus();
+            this.dummySensor = new DummySensor(this.virtualFunctionBus);
             this.ZIndex = 10;
         }
 
